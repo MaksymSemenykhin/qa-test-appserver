@@ -1,0 +1,21 @@
+{
+  "name": "qa-test-appserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaksymSemenykhin/qa-test-appserver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaksymSemenykhin/qa-test-appserver/issues"
+  },
+  "homepage": "https://github.com/MaksymSemenykhin/qa-test-appserver#readme",
+  "dependencies": {
+  }
+}
