@@ -1,9 +1,10 @@
 let http = require('http');
+let parser = require('./parser');
 
 let onConnect = function(req, res) {
-    res.setHeader('X-Foo', 'bar');
 
-    res.end('ok');
+    let result = parser.spaceReplacer('123,asd,asdasd !!!');
+    res.end(JSON.stringify(result));
 }
 
 let server =  http.createServer(onConnect)
