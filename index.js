@@ -3,11 +3,13 @@ let parser = require('./parser');
 
 let onConnect = function(req, res) {
 
-    let result = parser.spaceReplacer('123,asd,asdasd !!!');
+    parser.setQuery(req.url);
+
+    let result = parser.spaceReplacer();
     res.end(JSON.stringify(result));
 }
 
-let server =  http.createServer(onConnect)
+let server =  http.createServer(onConnect);
 
 server.listen(3000);
 
