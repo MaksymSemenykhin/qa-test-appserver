@@ -1,7 +1,8 @@
 // let urlModule = require('url');
 
-let msemfucntion = function(text){
-    return text.replace('msem','superMsem');
+let ollyfucntion = function(text){
+    var word = text.toUpperCase();
+    return word + "_Test" ;
 }
 
 let spaceReplacer = function(text){
@@ -10,10 +11,8 @@ let spaceReplacer = function(text){
     let words = text.split(','); // ['123.asd'] 0
 
     words.forEach(function(word,index){
-        let aa = msemfucntion(word)
-        console.log(aa);
-        console.log(word);
-        console.log(index);
+        let a = ollyfucntion(word);
+        console.log(a);
     })
 
     return words;
