@@ -19,15 +19,30 @@ let setQuery = function (url) {
 let spaceReplacer = function(){
 
     let text = _getText();
-    let words = text.split(',');
+    let words;
+    let amount;
+    let dividedAmount;
+    if (text.indexOf("$") != -1) {
+      amount = text.slice(1) ;
+      dividedAmount = amount.split('.');
 
-    words.forEach(function(word,index){
-        console.log(word);
+        dividedAmount.forEach(function(dividedAmount,index){
+        console.log(dividedAmount);
         console.log(index);
     })
+    return dividedAmount;
 
+    } else	{
+		words = text.split(',');
+
+    	words.forEach(function(word,index){
+       		console.log(word);
+       		console.log(index);
+        })
     return words;
+    }
 }
+
 
 module.exports = {
     spaceReplacer:spaceReplacer,
