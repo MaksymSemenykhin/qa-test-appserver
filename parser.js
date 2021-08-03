@@ -1,17 +1,33 @@
-// let urlModule = require('url');
+let urlModule = require('url');
+
+let _query;
+
+let _getText = function () {
+
+    if(!_query)
+        return '';
+    if(!_query.text)
+        return '';
+
+    return _query.text ;
+}
 
 let ollyfucntion = function(text){
     var word = text.toUpperCase();
     return word + "_Test" ;
 }
 
-let spaceReplacer = function(text){
-    console.log('spaceReplacer');
+let setQuery = function (url) {
+    _query = urlModule.parse(url,true).query;
+}
 
-    let words = text.split(','); // ['123.asd'] 0
+let spaceReplacer = function(){
+
+    let text = _getText();
+    let words = text.split(',');
 
     words.forEach(function(word,index){
-        let a = ollyfucntion(word);
+        let changedValue = ollyfucntion(word);
         console.log(a);
     })
 
@@ -19,5 +35,6 @@ let spaceReplacer = function(text){
 }
 
 module.exports = {
-    spaceReplacer:spaceReplacer
+    spaceReplacer:spaceReplacer,
+    setQuery
 }
